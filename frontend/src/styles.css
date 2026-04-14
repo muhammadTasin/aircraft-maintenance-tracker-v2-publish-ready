@@ -1,0 +1,458 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #112031;
+  background: #f4f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f7fb;
+  color: #112031;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  gap: 16px;
+}
+
+.auth-card,
+.panel,
+.summary-card,
+.subpanel,
+.nested-panel {
+  background: #ffffff;
+  border: 1px solid #dbe4f0;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(10, 37, 64, 0.06);
+}
+
+.auth-card {
+  width: min(560px, 100%);
+  padding: 28px;
+}
+
+.auth-card h1,
+.topbar h1,
+.panel h2,
+.subpanel h3 {
+  margin: 0 0 8px;
+}
+
+.stacked-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.stacked-form label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #bfd0e0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: white;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.primary-button,
+.secondary-button,
+.text-button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 600;
+}
+
+.primary-button {
+  background: #0f62fe;
+  color: white;
+}
+
+.secondary-button {
+  background: #e5eef9;
+  color: #0e3b7d;
+}
+
+.text-button {
+  background: transparent;
+  color: #0f62fe;
+}
+
+.app-shell {
+  padding: 24px;
+  max-width: 1720px;
+  margin: 0 auto;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.summary-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  margin-bottom: 20px;
+}
+
+.summary-card {
+  padding: 18px;
+  display: grid;
+  gap: 6px;
+}
+
+.summary-card span,
+.label,
+.muted-text,
+small {
+  color: #5d7288;
+}
+
+.summary-card strong {
+  font-size: 24px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 20px;
+}
+
+.left-column,
+.right-column {
+  display: grid;
+  gap: 20px;
+  align-content: start;
+}
+
+.panel {
+  padding: 20px;
+}
+
+.subpanel,
+.nested-panel {
+  padding: 16px;
+}
+
+.panel-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.compact-header {
+  margin-bottom: 10px;
+}
+
+.toolbar-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.compact-gap {
+  gap: 8px;
+}
+
+.inline-note {
+  background: #eff7ff;
+  border: 1px solid #d0e2ff;
+  color: #0e3b7d;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.aircraft-list {
+  display: grid;
+  gap: 10px;
+}
+
+.aircraft-item {
+  width: 100%;
+  border: 1px solid #dbe4f0;
+  background: #f9fbfe;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.aircraft-item.selected {
+  border-color: #0f62fe;
+  background: #eef5ff;
+}
+
+.aircraft-item p,
+.history-item p {
+  margin: 4px 0 0;
+}
+
+.aircraft-meta {
+  display: grid;
+  gap: 6px;
+  justify-items: end;
+}
+
+.status-badge,
+.pill,
+.badge,
+.aircraft-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.badge-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.horizontal-wrap {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.status-serviceable,
+.badge-airworthy,
+.task-status-completed,
+.defect-status-resolved,
+.history-info {
+  background: #d6f3e2;
+  color: #0b7a44;
+}
+
+.status-unserviceable,
+.badge-restricted,
+.impact-serviceable-with-restrictions,
+.task-status-completed-pending-sign-off,
+.defect-status-deferred,
+.history-warning {
+  background: #ffe1c7;
+  color: #a65106;
+}
+
+.status-aog,
+.badge-not-airworthy,
+.impact-unserviceable,
+.impact-aog,
+.priority-critical,
+.defect-status-open,
+.history-critical {
+  background: #ffd7da;
+  color: #b42318;
+}
+
+.pill,
+.task-status-open,
+.task-status-in-progress,
+.defect-status-under-review,
+.impact-monitoring {
+  background: #eef5ff;
+  color: #0f62fe;
+}
+
+.priority-low {
+  background: #eef5ff;
+  color: #0f62fe;
+}
+
+.priority-medium {
+  background: #fff4d6;
+  color: #8c5a00;
+}
+
+.priority-high {
+  background: #ffe6bf;
+  color: #9a4f00;
+}
+
+.details-grid,
+.form-grid-two,
+.form-grid-three,
+.detail-grid-wide {
+  display: grid;
+  gap: 12px;
+}
+
+.details-grid,
+.form-grid-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.form-grid-three,
+.detail-grid-wide {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.detail-grid-wide {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.details-grid > div,
+.detail-grid-wide > div {
+  background: #f9fbfe;
+  border-radius: 12px;
+  padding: 14px;
+  display: grid;
+  gap: 6px;
+}
+
+.checkbox-label {
+  display: flex !important;
+  gap: 10px;
+  align-items: center;
+  font-weight: 600;
+  margin-top: 28px;
+}
+
+.checkbox-label input {
+  width: auto;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.top-gap {
+  margin-top: 18px;
+}
+
+.history-list {
+  display: grid;
+  gap: 12px;
+}
+
+.history-item {
+  border-left: 4px solid #0f62fe;
+  padding: 12px 14px;
+  background: #f9fbfe;
+  border-radius: 0 12px 12px 0;
+}
+
+.error-banner {
+  background: #fee4e2;
+  color: #b42318;
+  border: 1px solid #fecdca;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.page-banner {
+  margin-bottom: 16px;
+}
+
+.empty-panel {
+  color: #5d7288;
+}
+
+.alert-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.chip-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.aircraft-chip {
+  background: #fff1f3;
+  color: #b42318;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #e7eef7;
+  text-align: left;
+  vertical-align: top;
+}
+
+.small-text {
+  font-size: 12px;
+}
+
+@media (max-width: 1220px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .detail-grid-wide {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar,
+  .panel-header-row,
+  .details-grid,
+  .form-grid-two,
+  .form-grid-three,
+  .detail-grid-wide {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .badge-stack {
+    align-items: flex-start;
+  }
+
+  .app-shell {
+    padding: 16px;
+  }
+}

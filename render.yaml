@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: aircraft-maintenance-tracker
+    env: node
+    plan: free
+    autoDeploy: false
+    buildCommand: npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_EXPIRES_IN
+        value: 12h
+      - key: ALLOW_OPEN_ROLE_SIGNUP
+        value: "false"
+      - key: TASK_DUE_SOON_DAYS
+        value: "7"
+      - key: CHECK_DUE_SOON_DAYS
+        value: "14"
+      - key: HOURS_DUE_SOON_MARGIN
+        value: "5"
+      - key: CYCLES_DUE_SOON_MARGIN
+        value: "3"
