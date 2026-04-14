@@ -2,7 +2,7 @@
   "name": "aircraft-maintenance-tracker",
   "private": true,
   "engines": {
-    "node": ">=18"
+    "node": "20.x"
   },
   "scripts": {
     "build": "npm ci --prefix backend && npm ci --prefix frontend && npm run build --prefix frontend",
